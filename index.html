@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Memory</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<h1>Memory Game [<span>{{correct}}</span>/10]</h1>
+	<div class="container">
+		<div class="card" ng-repeat="x in cards" ng-click="click($index,x.value,x.shoot)">
+			<img ng-src="{{x.picture}}">
+			<div class="layer" ng-if="!x.shoot"></div>
+		</div>
+	</div>
+	<div id="gameOver">
+		<img ng-src="img/winner.png">
+		<button onclick="window.location.reload(false);"title="Again?"><i class="fas fa-redo-alt"></i></button>
+	</div>
+	<script type="text/javascript" src="angular.js"></script>
+</body>
+</html>
